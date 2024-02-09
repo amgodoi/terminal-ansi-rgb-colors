@@ -16,7 +16,7 @@ void reset_terminal_to_default_color();
 /* OBS: works only in true colors terminals as KITTY */
 int main()
 {
-	(void) setlocale(LC_CTYPE, "");
+    (void) setlocale(LC_CTYPE, "");
 
     wchar_t *s = L"Hello, world!!!";
 
@@ -30,8 +30,8 @@ int main()
     }
 
     reset_terminal_to_default_color();
-    
-	return 0;
+
+    return 0;
 }
 
 void change_terminal_color(uint8_t r, uint8_t g, uint8_t b)
@@ -39,8 +39,7 @@ void change_terminal_color(uint8_t r, uint8_t g, uint8_t b)
     wprintf(COLOR_RGB, r, g, b);
 }
 
-void reset_terminal_to_default_color() 
+void reset_terminal_to_default_color()
 {
     wprintf(L"%ls", COLOR_RESET_TO_DEFAULT);
 }
-
